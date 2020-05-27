@@ -17,6 +17,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+gem "slim-rails"
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+gem 'bootstrap', '~> 4.5.0'
+gem "font-awesome-rails"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -58,6 +62,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
