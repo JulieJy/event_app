@@ -21,7 +21,8 @@ gem "slim-rails"
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'bootstrap', '~> 4.5.0'
 gem "font-awesome-rails"
-
+gem "chartkick"
+gem 'groupdate'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

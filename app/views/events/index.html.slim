@@ -3,8 +3,11 @@
     h1 Events
     p Discover past and upcoming events !
 
-
 .container
+  .container-form
+    h2 Number of events by day
+    = line_chart Event.group_by_day(:date).count, colors: ["coral", "#666"], xmin: 10.days.ago, xmax: 10.days.from_now
+
   - @events.each do |event|
     .card-event
       img src="http://loremflickr.com/280/280/#{event.name}"
@@ -23,7 +26,7 @@
     br
   br
   .container-form
-    h1 New event
+    h2 New event
     == render 'form'
 
 

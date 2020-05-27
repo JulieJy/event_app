@@ -3,6 +3,8 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.1.1",
+    "chart.js": "^2.9.3",
+    "chartkick": "^3.2.0",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11"

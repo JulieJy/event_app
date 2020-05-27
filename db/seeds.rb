@@ -7,15 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+p 'I destroy all comments'
+Comment.destroy_all
 p 'I destroy all events'
 Event.destroy_all
 
-p 'I create 10 upcoming events'
+p 'I create 20 upcoming events'
 i = 0
-10.times do
+20.times do
   event = Event.new(
     name: Faker::Music::RockBand.name,
-    date: Faker::Date.between(from: Date.today, to: 20.days.from_now),
+    date: Faker::Date.between(from: Date.today, to: 40.days.from_now),
     email: Faker::Internet.email,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
   )
@@ -23,11 +25,11 @@ i = 0
   i += 1
 end
 
-p 'I create 10 past events'
-10.times do
+p 'I create 20 past events'
+20.times do
   event = Event.new(
     name: Faker::Music::RockBand.name,
-    date: Faker::Date.between(from: 20.days.ago, to: Date.today),
+    date: Faker::Date.between(from: 40.days.ago, to: Date.today),
     email: Faker::Internet.email,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
   )
@@ -36,14 +38,3 @@ p 'I create 10 past events'
 end
 
 p 'Finished !'
-
-# p 'I destroy all ingredients'
-# Ingredient.destroy_all
-
-# p 'I create 10 new ingredients'
-# 10.times do
-#   Ingredient.create(
-#     name: Faker::Food.ingredient
-#     )
-# end
-# p 'Finished !'
