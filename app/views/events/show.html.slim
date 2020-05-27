@@ -1,0 +1,35 @@
+p#notice = notice
+
+.container
+  .container-event
+    h1 = @event.name
+    p
+      i.fa.fa-calendar
+      |
+        #{@event.date}
+    p = @event.description
+    p Organized by: #{@event.email}
+
+  .container-event
+    h2 = "Add a new comment"
+    = form_for @comment do |f|
+      = f.hidden_field :event_id
+      .form-group
+        = f.label :author, :class => 'control-label col-lg-2'
+        = f.text_field :author, :class => 'form-control'
+      .form-group
+        = f.label :content, :class => 'control-label col-lg-2'
+        = f.text_area :content, :class => 'form-control'
+      .actions
+        = f.submit
+
+  .container-event
+    h2 = "Comments"
+    - if @comments.present?
+      - @comments.each do |comment|
+          h4 = comment.author
+          p = comment.content
+          br
+    - else
+      p Empty for now...
+

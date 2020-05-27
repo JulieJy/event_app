@@ -1,0 +1,29 @@
+.banner
+  .title
+    h1 Events
+    p Discover past and upcoming events !
+
+
+.container
+  - @events.each do |event|
+    .card-event
+      img src="http://loremflickr.com/280/280/#{event.name}"
+      .card-event-infos
+        h2 class=(event.date > Date.today ? "upcoming" : "past") = link_to "#{event.name}", event
+
+        p = event.description
+        p
+          i.fa.fa-user
+          |
+            #{event.email}
+        p
+          i.fa.fa-calendar
+          |
+            #{event.date}
+    br
+  br
+  .container-form
+    h1 New event
+    == render 'form'
+
+
