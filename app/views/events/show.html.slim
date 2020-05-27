@@ -16,10 +16,10 @@ p#notice = notice
       = f.hidden_field :event_id
       .form-group
         = f.label :author, :class => 'control-label col-lg-2'
-        = f.text_field :author, :class => 'form-control'
+        = f.text_field :author, :class => 'form-control', required: true
       .form-group
         = f.label :content, :class => 'control-label col-lg-2'
-        = f.text_area :content, :class => 'form-control'
+        = f.text_area :content, :class => 'form-control', required: true
       .actions
         = f.submit
 
