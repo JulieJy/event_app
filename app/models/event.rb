@@ -1,3 +1,14 @@
+#
+# @model
+#
+# @property id(required) [integer] event's id
+# @property name [string] event title
+# @property date [date] date of the event
+# @property email [string] email of the organizer
+# @property description [text] description of the event
+# @property created_at [date-time] Datetime of the event creation
+# @property updated_at [date-time] Datetime of the event last update
+#
 class Event < ApplicationRecord
   has_many :comments
 
