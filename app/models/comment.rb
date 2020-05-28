@@ -4,6 +4,7 @@
 # @property id(required) [integer] comment's id
 # @property author [string] comment author
 # @property content [string] content of the comment
+# @property event_id(required) [integer] id of the comment's event
 # @property created_at [date-time] Datetime of the comment creation
 # @property updated_at [date-time] Datetime of the comment last update
 #

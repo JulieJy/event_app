@@ -1,4 +1,17 @@
+# @resource Comment
+#
 class CommentsController < ApplicationController
+
+  ##
+  # Creates a new comment
+  #
+  # @path [POST] /comments
+  #
+  # @parameter author [string] Title of the comment (required)
+  # @parameter content [string] Content of the comment (required - 140 car max)
+  # @parameter event_id [integer] Event of the comment (required)
+  # @response_type [Comment] Comment successfully created
+  #
   def create
     @comment = Comment.new(comment_params)
     if @comment.valid?
