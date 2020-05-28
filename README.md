@@ -1,24 +1,26 @@
-# README
+# EventApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small Rails application to manage events.
 
-Things you may want to cover:
+## Technologies used
+* Ruby 2.5.1
+* Rails 5.2.4.3
+* Postgres 10.12
 
-* Ruby version
+## Special gem used
+* Bootstrap 4.5 : to add some style to forms
+* FontAwesome : to add some nice symbols
+* Faker : to create some events
+* Chartkick : to generate a beautiful chart
 
-* System dependencies
+## Quick strart
+Clone repository
+```
+$ bundle
+$ rails db:migrate
+$ rails db:seed
+$ rails s
+```
+Go to `localhost:3000` and enjoy !
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
