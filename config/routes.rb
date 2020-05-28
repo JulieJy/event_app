@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "events#index"
-  resources :events
-  resources :comments
+  resources :events, only: [:index, :show, :create]
+  resources :comments, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
