@@ -15,11 +15,12 @@ p#notice = notice
     = form_for @comment do |f|
       = f.hidden_field :event_id
       .form-group
-        = f.label :author, :class => 'control-label col-lg-2'
-        = f.text_field :author, :class => 'form-control', required: true
+        = f.label :author, class: 'control-label col-lg-2 required'
+        = f.text_field :author, class: 'form-control', required: true
       .form-group
-        = f.label :content, :class => 'control-label col-lg-2'
-        = f.text_area :content, :class => 'form-control', required: true
+        = f.label :content, class: 'control-label col-lg-2 required'
+        = f.text_area :content, class: 'form-control', required: true, maxlength: 140
+        small class="form-text text-muted" 140 car. max
       .actions
         = f.submit
 
