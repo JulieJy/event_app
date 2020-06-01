@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @comment = @event.comments.new
-    @comments = @event.comments.order(created_at: :desc)
+    @comments = @event.comments.order(created_at: :asc)
   end
 
   ##
