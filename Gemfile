@@ -23,6 +23,7 @@ gem 'bootstrap', '~> 4.5.0'
 gem "font-awesome-rails"
 gem "chartkick"
 gem 'groupdate'
+gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -63,7 +64,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
 end

@@ -1,43 +1,50 @@
-#app class='modal-vue'
-  .overlay v-if="showModal" @click="showModal = false"
+<!-- Banner -->
+.banner
+  .title
+    h1 Events
+    p Discover past and upcoming events !
+    button class="btn btn-flat" id='new_event_btn' data-toggle="modal" data-target="#new_event_modal" + New Event
 
+<!-- Modal -->
+.div class="modal fade" id="new_event_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" X
+        h3 Add a new event
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+      .modal-body
+        == render 'form'
 
-  .banner
-    .title
-      h1 Events
-      p Discover past and upcoming events !
-      button @click="showModal = true" class="btn btn-flat" id='new_event_btn' + New Event
+.container
+<!-- Chart -->
+  .container-form
+    h2 Number of events by day
+    = line_chart Event.group_by_day(:date).count, colors: ["coral", "#666"], xmin: 10.days.ago, xmax: 10.days.from_now
 
-  .modal-event v-if="showModal"
-    button class="close" @click="showModal = false" X
-    h2 New event
-    == render 'form'
+<!-- Sort btn -->
+  label for="sort" Sort by:
+  select id="sort"
+    option Date asc
+    option Date desc
+    option Organizer asc
+    option Organizer desc
 
-  .container
-    .container-form
-      h2 Number of events by day
-      = line_chart Event.group_by_day(:date).count, colors: ["coral", "#666"], xmin: 10.days.ago, xmax: 10.days.from_now
+  <!-- Events list -->
+  - @events.each do |event|
+    .card-event
+      img src="http://loremflickr.com/280/280/#{event.name}"
+      .card-event-infos
+        h2 class=(event.date > Date.today ? "upcoming" : "past") = link_to "#{event.name}", event
 
-    label for="sort" Sort by:
-    select id="sort"
-      option Date asc
-      option Date desc
-      option Organizer asc
-      option Organizer desc
-    - @events.each do |event|
-      .card-event
-        img src="http://loremflickr.com/280/280/#{event.name}"
-        .card-event-infos
-          h2 class=(event.date > Date.today ? "upcoming" : "past") = link_to "#{event.name}", event
-
-          p = event.description
-          p
-            i.fa.fa-user
-            |
-              #{event.email}
-          p
-            i.fa.fa-calendar
-            |
-              #{event.date}
+        p = event.description
+        p
+          i.fa.fa-user
+          |
+            #{event.email}
+        p
+          i.fa.fa-calendar
+          |
+            #{event.date}
 
 

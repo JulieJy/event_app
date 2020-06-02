@@ -1,14 +1,8 @@
-.modal-vue {
-  .overlay {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .5);
+.modal {
+  .modal-header {
+    display: block;
   }
-  .modal-event {
+  .modal-content {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -17,16 +11,16 @@
     margin: 0 auto;
     padding: 20px 30px;
     background-color: #fff;
-    margin-top: -300px;
+    margin-top: -350px;
     margin-left: -250px;
-    h2 {
-      text-align:center;
-    }
 
   }
   .close{
     position: absolute;
     top: 10px;
     right: 10px;
+  }
+  label {
+    text-align: left;
   }
 }
