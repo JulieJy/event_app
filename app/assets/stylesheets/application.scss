@@ -57,6 +57,14 @@ button {
     opacity: .9;
   }
 }
+.sort {
+  margin-bottom: 20px;
+}
+
+.active {
+  background: #f56734!important;
+  opacity: 1;
+}
 
 .btn-flat {
   color: white;
@@ -64,9 +72,9 @@ button {
   border-radius: 4px;
   background: coral;
   transition: background 0.3s ease;
+  &:hover {
+    background: #f56734;
+    color: white;
+  }
 }
 
-.btn-flat:hover {
-  background: #f56734;
-  color: white;
-}

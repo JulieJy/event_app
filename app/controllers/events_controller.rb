@@ -1,6 +1,7 @@
 # @resource Event
 #
 class EventsController < ApplicationController
+  helper_method :sort_column, :sort_direction
 
   ##
   # Returns a list of upcoming and past events (of the 10 last days)
@@ -10,7 +11,8 @@ class EventsController < ApplicationController
   # @response_type [array<Event>]
   #
   def index
-    @events = Event.all.where("date > ?", 10.days.ago).order(date: :desc)
+    p params[:sort]
+    @events = Event.all.where("date > ?", 10.days.ago).order(sort_column + " " + sort_direction)
     @event = Event.new
   end
 
@@ -53,5 +55,13 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :date, :description, :email)
+  end
+
+  def sort_column
+    Event.column_names.include?(params[:sort]) ? params[:sort] : "date"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
 end

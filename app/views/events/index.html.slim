@@ -1,11 +1,11 @@
-<!-- Banner -->
+/// Banner
 .banner
   .title
     h1 Events
     p Discover past and upcoming events !
     button class="btn btn-flat" id='new_event_btn' data-toggle="modal" data-target="#new_event_modal" + New Event
 
-<!-- Modal -->
+/// Modal
 .div class="modal fade" id="new_event_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
   .modal-dialog role="document"
     .modal-content
@@ -16,21 +16,18 @@
       .modal-body
         == render 'form'
 
+
 .container
-<!-- Chart -->
   .container-form
+    /// Chart
     h2 Number of events by day
     = line_chart Event.group_by_day(:date).count, colors: ["coral", "#666"], xmin: 10.days.ago, xmax: 10.days.from_now
 
-<!-- Sort btn -->
-  label for="sort" Sort by:
-  select id="sort"
-    option Date asc
-    option Date desc
-    option Organizer asc
-    option Organizer desc
+  /// Sort btns
+  = link_to "Sort By Date", events_path(sort: 'date', direction: 'desc'), class: "btn btn-flat sort #{'active' if params[:sort] == 'date'}"
+  = link_to "Sort By Organizer", events_path(sort: 'email', direction: 'asc'), class: "btn btn-flat sort #{'active' if params[:sort] == 'email'}"
 
-  <!-- Events list -->
+  /// event list
   - @events.each do |event|
     .card-event
       img src="http://loremflickr.com/280/280/#{event.name}"
