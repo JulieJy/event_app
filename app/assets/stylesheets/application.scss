@@ -36,3 +36,28 @@ a {
 label.required:after {
   content: " *";
 }
+
+button {
+  color: white;
+  padding: 10px 24px;
+  border-radius: 4px;
+  background: coral;
+  transition: background 0.3s ease;
+  border: none;
+  &:hover {
+    opacity: .9;
+  }
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: coral;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #f56734;
+  color: white;
+}

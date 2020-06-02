@@ -1,19 +1,19 @@
 = form_for @event do |f|
   .form-group
-    = f.label :name, class:'control-label col-lg-2 required'
+    = f.label :name, class:'control-label col-lg-5 required'
     .col-lg-10
     = f.text_field :name, class:'form-control', required: true
   .form-group
-    = f.label :description, class:'control-label col-lg-2'
+    = f.label :description, class:'control-label col-lg-5'
     .col-lg-10
     = f.text_area :description, class:'form-control', maxlength: 300
     small class="form-text text-muted" 300 car. max
   .form-group
-    = f.label :email, class:'control-label col-lg-2 required'
+    = f.label :email, class:'control-label col-lg-5 required'
     .col-lg-10
     = f.email_field :email, class:'form-control', required: true
   .form-group
-    = f.label :date, class:'control-label col-lg-2 required'
+    = f.label :date, class:'control-label col-lg-5 required'
     .col-lg-10
     = f.date_field :date, class:'form-control', required: true
   .actions

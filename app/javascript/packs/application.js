@@ -15,26 +15,4 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 //= require chartkick
-
-console.log('Hello World from Webpacker')
-
-import Vue from 'vue/dist/vue.js';
-
-Vue.component('modal', {
-  template: '#modal-template',
-  props: ['show'],
-  methods: {
-    savePost: function () {
-      // Some save logic goes here...
-
-      this.$emit('close');
-    }
-  }
-});
-
-new Vue({
-  el: '#app',
-  data: {
-    showModal: false
-  }
-});
+//= require Chart.bundle
