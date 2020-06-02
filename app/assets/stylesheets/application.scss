@@ -31,6 +31,15 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  opacity: 0.85;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+    opacity: 1;
+    text-shadow: none;
+
+  }
 }
 
 label.required:after {

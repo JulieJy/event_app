@@ -1,6 +1,9 @@
 p#notice = notice
-
 .container
+  = link_to root_path, class: 'return'
+      i.fa.fa-arrow-left
+      |
+        Back to events
   .container-event
     h1 = @event.name
     p
